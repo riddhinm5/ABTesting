@@ -16,9 +16,9 @@ List the standard deviation of each of your evaluation metrics. (These should be
 
 For each of your evaluation metrics, indicate whether you think the analytic estimate would be comparable to the the empirical variability, or whether you expect them to be different (in which case it might be worth doing an empirical estimate if there is time). Briefly give your reasoning in each case.
 
-###Sizing
+## Sizing
 
-#### Number of Samples vs. Power
+### Number of Samples vs. Power
 
 Indicate whether you will use the Bonferroni correction during your analysis phase, and give the number of pageviews you will need to power you experiment appropriately. (These should be the answers from the "Calculating Number of Pageviews" quiz.)
 
@@ -36,12 +36,13 @@ For each of your invariant metrics, give the 95% confidence interval for the val
 
 For any sanity check that did not pass, explain your best guess as to what went wrong based on the day-by-day data. Do not proceed to the rest of the analysis unless all sanity checks pass.
 
-### Result Analysis
-#### Effect Size Tests
+## Result Analysis
+
+### Effect Size Tests
 
 For each of your evaluation metrics, give a 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant. (These should be the answers from the "Effect Size Tests" quiz.)
 
-#### Sign Tests
+### Sign Tests
 
 For each of your evaluation metrics, do a sign test using the day-by-day data, and report the p-value of the sign test and whether the result is statistically significant. (These should be the answers from the "Sign Tests" quiz.)
 
