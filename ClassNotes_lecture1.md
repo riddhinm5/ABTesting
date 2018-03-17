@@ -1,8 +1,4 @@
-# Class Notes
-
-Below are my class notes from the Udacity AB testing class
-
-## Lecture 1
+# Lecture 1
 
 ### Steps to set up an A/B test
 
