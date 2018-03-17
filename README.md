@@ -1,6 +1,6 @@
 # ABTesting
 
-This is my solution to the Udacity AB testing course final project
+This project is my solution to the Udacity AB testing course final project. Below are the questions asked in this project, the solutions can be found in the ipynb file.
 
 ## Experiment Design
 
