@@ -2,6 +2,12 @@
 
 Chosing metrics for an A/B test
 
+## Steps to selecting metrics for an experiment
+
+1. Define problem and suitable metrics
+2. Build intuition - measure the change between control and expt & the variability of the metric
+3. Characterize
+
 ## Metrics of an A/B test
 
 1. Invariant metrics - metrics that do not change value in control and expt
@@ -18,13 +24,7 @@ Some evaluation metrics may take too long to collect or the data for that metric
 5. Retrospective analysis
 6. Experiments
 
-### Steps to selecting metrics for an experiment
-
-1. Define problem and suitable metrics
-2. Build intuition - measure the change between control and expt & the variability of the metric
-3. Characterize
-
-#### Defining a metric
+### Defining a metric
 
 There are a number of ways we can calculate a given metric once we have defined it. For instance for a metric like "click through probability" which is defined as
 
@@ -32,21 +32,21 @@ There are a number of ways we can calculate a given metric once we have defined 
 
 the # users that click the page can be defined in a number of ways. 
 
-##### 1.By Interval
+#### 1.By Interval
 
 Number of Users/Cookies cick in a given "session". Where session is defined by a fixed amount of time for instance 1 day or 12 hours or 1/2 hour.
 
-##### 2.By Pageview
+#### 2.By Pageview
 
 Instead of counting number of cookies/users that click we can also get the success rate through # of pageviews with clicks in them thereby calculating the proportion of PVs with clicks
 
-##### 3.Calculating rates
+#### 3.Calculating rates
 
 Calculate just the total number of clicks and divide by total pageviews. This would be a rate and not a probability.
 
 All three of these metrics would have different values and the #1 would have different values also depending on the time interval chosen. Best way to chose which metric to use and the specific details therein is to slice the data to get the best definition.
 
-#### How to chose a metric
+### How to chose a metric
 
 Things to keep in mind when selecting a metric:
 
@@ -63,12 +63,12 @@ Things to keep in mind when selecting a metric:
     * Probabilities and rates
     * Ratios
 
-#### How to measure the change in the metric between the control and experiment
+### How to measure the change in the metric between the control and experiment
 
 1. Simple: absolute difference between the control and experiment evaluation metric
 2. Actual: See % change in the metric between control and experiment. This method is especially useful when we are running too many experiments and need to keep in context the changes in the system. Also helps when the system has seasonal changes. By using % change we just need one practical significance boundry to get stability over time.
 
-#### Measuring the variability of a metric
+### Measuring the variability of a metric
 
 We may or may not be able to calculate the analytical or emperical variability for data depending on the metric and the data distribution. In order to calculate the confidence interval analytically we need:
 
@@ -84,7 +84,7 @@ m = Z * SE
 
 where m is the margin of error used to build the confidence interval and Z is the z-score for the xth% confidence boundry.
 
-##### Some common type of metrics and their analytical distributions
+#### Some common type of metrics and their analytical distributions
 
 | Type of Metric | Distribution | Estimated Variance |
 |     :---:      |     :---:    |     :---          |
@@ -94,3 +94,19 @@ where m is the margin of error used to build the confidence interval and Z is th
 | rates | Poisson Distribution | Mu i.e. the sample mean |
 | diff between rates | not poisson, not normal | variance of difference between 2 poisson distributions or Mu1 / Mu2 if it is close to 1 and calculate the variance of that |
 | Ratios | Depends | Depeneds |
+
+### Non-parametric approach to variance
+
+Instead of calculating an analytical or emperical variance we can also use a "sign test" which follows a binomial distribution to calculate the non-parametric confidence interval. This is useful because when we calculate the variance of a metric we are trying to make an assumption about the underlying distribution of the data which we may or may not know about.
+
+### A/A test to culculate emperical variability of a metric
+
+Using an A/A test of using observational data are also good proxies to calculating variability of a metric when we do not know the underlying distribution or if the distribution is too complex. In an A/A test there is no difference in the experience between the control and experiment. also need to choose a sample size for both groups such that we can get a good estimate of the variability. stdev is inversly proportal to the square root of the sample size so the larger the sample size the smaller the variance. 
+
+Another way to calculate the emperical variability of a metric is to use bootstrapping. (e.g. The germ theory problem)
+
+**Uses:**
+
+1. If we already have a analytical calculation of a confidence interval, an A/A test ca be used to check the resilts to see if we are getting what is expected
+2. If we cannot calculate the variability analytically we can estimate the variance emperically and then use the assumption about the distribution to calculate the confidence interval
+3. Make no assumption about the underlying distribution and directly estimate the conf interval
