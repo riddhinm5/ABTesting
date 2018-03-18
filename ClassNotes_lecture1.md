@@ -1,6 +1,6 @@
 # Lecture 1
 
-### Steps to set up an A/B test
+## Steps to set up an A/B test
 
 1. Decide on change
 2. Chose a Metric
