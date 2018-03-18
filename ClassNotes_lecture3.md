@@ -87,3 +87,5 @@ where m is the margin of error used to build the confidence interval and Z is th
 | Type of Metric | Distribution | Estimated Variance |
 |     :---:      |     :---:    |     :---:          |
 | probability    | Binomial (Normal with large N) | P_hat*(1-P_hat)*1/N |
+| Mean | Normal (Central limit theorem) | Sigma^2/N where Sigma squared id the variance of the sample |
+| Count/Difference | Normal (not always but mostly) | Var(x)+Var(y) where x and y are the component metrics |
