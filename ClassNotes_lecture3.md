@@ -1,4 +1,6 @@
-# Lecture 2
+# Lecture 3
+
+Chosing metrics for an A/B test
 
 ## Metrics of an A/B test
 
@@ -89,3 +91,6 @@ where m is the margin of error used to build the confidence interval and Z is th
 | probability    | Binomial (Normal with large N) | P_hat*(1-P_hat)*1/N |
 | Mean | Normal (Central limit theorem) | Sigma^2/N where Sigma squared id the variance of the sample |
 | Count/Difference | Normal (not always but mostly) | Var(x)+Var(y) where x and y are the component metrics |
+| rates | Poisson Distribution | Mu i.e. the sample mean |
+| diff between rates | not poisson, not normal | variance of difference between 2 poisson distributions or Mu1 / Mu2 if it is close to 1 and calculate the variance of that |
+| Ratios | Depends | Depeneds |

@@ -1,5 +1,7 @@
 # Lecture 2
 
+Ethical considerations for an A/B test
+
 ## Ethics of setting up an A/B test
 
 Things to keep in mind:
