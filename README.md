@@ -1,59 +1,40 @@
-# ABTesting
+# Overview of A/B testing
 
-This project is my solution to the Udacity AB testing course final project. Below are the questions asked in this project, the solutions can be found in the ipynb file.
+## Steps to set up an A/B test
 
-## Experiment Design
+1. Decide on change
+2. Chose a Metric
+3. review statistics (observational)
+4. Design the test
+5. Analyze results
 
-### Metric Choice
+## Ethics of setting up an A/B test
 
-List which metrics you will use as invariant metrics and evaluation metrics here. (These should be the same metrics you chose in the "Choosing Invariant Metrics" and "Choosing Evaluation Metrics" quizzes.)
+Things to keep in mind:
 
-For each metric, explain both why you did or did not use it as an invariant metric and why you did or did not use it as an evaluation metric. Also, state what results you will look for in your evaluation metrics in order to launch the experiment.
+1. Risk to participants
+2. Benefit - what will the experiment yield
+3. Choice - for instance: cna provide the users the choice to select privacy level
+4. Privacy - how is the privcy protected in teh data
 
-### Measuring Standard Deviation
+## Steps to selecting metrics for an experiment
 
-List the standard deviation of each of your evaluation metrics. (These should be the answers from the "Calculating standard deviation" quiz.)
+1. Define problem and suitable metrics
+2. Build intuition - measure the change between control and expt & the variability of the metric
+3. Characterize
 
-For each of your evaluation metrics, indicate whether you think the analytic estimate would be comparable to the the empirical variability, or whether you expect them to be different (in which case it might be worth doing an empirical estimate if there is time). Briefly give your reasoning in each case.
+## Steps to design an experiment
 
-## Sizing
+1. Choose the subject
+2. Choose the "population"
+3. Calculate Size of both classes needed
+4. Calculate the time the experiment needs to run
 
-### Number of Samples vs. Power
+## Steps to Analyze results of an A/B test
 
-Indicate whether you will use the Bonferroni correction during your analysis phase, and give the number of pageviews you will need to power you experiment appropriately. (These should be the answers from the "Calculating Number of Pageviews" quiz.)
-
-### Duration vs. Exposure
-
-Indicate what fraction of traffic you would divert to this experiment and, given this, how many days you would need to run the experiment. (These should be the answers from the "Choosing Duration and Exposure" quiz.)
-
-Give your reasoning for the fraction you chose to divert. How risky do you think this experiment would be for Udacity?
-
-### Experiment Analysis
-
-#### Sanity Checks
-
-For each of your invariant metrics, give the 95% confidence interval for the value you expect to observe, the actual observed value, and whether the metric passes your sanity check. (These should be the answers from the "Sanity Checks" quiz.)
-
-For any sanity check that did not pass, explain your best guess as to what went wrong based on the day-by-day data. Do not proceed to the rest of the analysis unless all sanity checks pass.
-
-## Result Analysis
-
-### Effect Size Tests
-
-For each of your evaluation metrics, give a 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant. (These should be the answers from the "Effect Size Tests" quiz.)
-
-### Sign Tests
-
-For each of your evaluation metrics, do a sign test using the day-by-day data, and report the p-value of the sign test and whether the result is statistically significant. (These should be the answers from the "Sign Tests" quiz.)
-
-### Summary
-
-State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.
-
-### Recommendation
-
-Make a recommendation and briefly describe your reasoning.
-
-### Follow-Up Experiment
-
-Give a high-level description of the follow up experiment you would run, what your hypothesis would be, what metrics you would want to measure, what your unit of diversion would be, and your reasoning for these choices.
+1. Sanity Check
+2. Choose single metric or multiple metrics
+3. Calculate change
+4. Check for statistical significance
+5. Sign test - Positive/Negative change
+6. Statistical significance of sign test
