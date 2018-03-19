@@ -84,4 +84,4 @@ alpha_individual = alpha_overall / n
 2. What is the change actually doing
 3. Is the change worth the effort, ROI
 
-** Should always ramp-up change experiment for % traffic instead of just turning it on directly**
+**Should always ramp-up change experiment for % traffic instead of just turning it on directly**
