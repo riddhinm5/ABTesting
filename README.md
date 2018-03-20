@@ -14,8 +14,8 @@ Things to keep in mind:
 
 1. Risk to participants
 2. Benefit - what will the experiment yield
-3. Choice - for instance: cna provide the users the choice to select privacy level
-4. Privacy - how is the privcy protected in teh data
+3. Choice - for instance: can provide the users the choice to select privacy level
+4. Privacy - how is the user privcy protected in the data (make data not personally identifiable)
 
 ## Steps to selecting metrics for an experiment
 
